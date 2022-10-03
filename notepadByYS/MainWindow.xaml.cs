@@ -63,15 +63,21 @@ namespace notepadByYS
             e.CanExecute = true;
         }
 
+        /// <summary>
+        /// NewCommand will be used to save the file and start a new blank page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             saveWindow sw = new saveWindow(tBox.Text);
             sw.ShowDialog();
+            tBox.Text = sw.TBoxContent;
             sw.Close();
 
-            tBox.Text = " ";
-        }
 
+            
+        }
         private void NewCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
 
@@ -79,6 +85,47 @@ namespace notepadByYS
 
         }
 
+        /// <summary>
+        /// Function used when the 'exit' option is selected, this will open a new window to ask
+        /// the user if he want's to save the changes or not.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (textChanged == true)
+            {
+                saveWindow sw = new saveWindow(tBox.Text);
+                sw.ShowDialog();
+                tBox.Text = sw.TBoxContent;
+                sw.Close();
+                
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        /// <summary>
+        /// Command used to open a new file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OpenCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+
+        }
+
+        private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            bool? result = ofd.ShowDialog();
+            tBox.Text = File.ReadAllText(ofd.FileName);
+
+
+        }
 
     }
 }

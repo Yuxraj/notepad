@@ -55,7 +55,7 @@
                 </StatusBar.RenderTransform>
                 <Label Name="cLable" Content="Character Count : " HorizontalAlignment="Left"/>
             </StatusBar>
-            <TextBox Name="tBox" TextWrapping="Wrap" Text="" TextChanged="tBox_TextChanged"/>
+            <TextBox Name="tBox" TextWrapping="Wrap" Text="" TextChanged="tBox_TextChanged" AcceptsReturn="True" AcceptsTab="True"/>
         </DockPanel>
     </Grid>
 </Window>
