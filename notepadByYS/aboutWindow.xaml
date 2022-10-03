@@ -6,8 +6,21 @@
         xmlns:local="clr-namespace:notepadByYS"
         mc:Ignorable="d"
         Title="aboutWindow" Height="450" Width="800">
-    <Grid PreviewDrop="Grid_PreviewDrop">
+    <Grid>
         <TextBlock Name="about" TextWrapping="Wrap" Text="TextBlock"/>
+        <DockPanel Margin="0,392,0,0">
+            <StatusBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch">
+                <StatusBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.114"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StatusBar.RenderTransform>
+                <Button Content="Button"/>
 
+            </StatusBar>
+        </DockPanel>
     </Grid>
 </Window>

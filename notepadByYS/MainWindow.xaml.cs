@@ -24,6 +24,8 @@ namespace notepadByYS
     {
         bool textChanged = false;
 
+       
+
         public MainWindow()
         {
             InitializeComponent();
@@ -127,5 +129,14 @@ namespace notepadByYS
 
         }
 
+        private void aboutClick(object sender, RoutedEventArgs e)
+        {
+            aboutWindow aw = new aboutWindow();
+
+            aw.about.Text = "Microsoft Windows\r\nVersion 21H2 (OS Build 19044.2006)\r\n© Microsoft Corporation. All rights reserved.\r\nThe Windows 10 Pro operating system and its user interface are protected by trademark and other pending or existing intellectual property rights in the United States and other countries/regions.\r\n8319:\r\nHIPF\r\nThis product is licensed under the Microsoft Software License\r\nTerms to:\r\nuser name";
+            aw.ShowDialog();
+           
+            aw.Close();
+        }
     }
 }

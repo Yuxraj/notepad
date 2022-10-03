@@ -19,16 +19,12 @@ namespace notepadByYS
     /// </summary>
     public partial class aboutWindow : Window
     {
+
+
         public aboutWindow()
         {
             InitializeComponent();
         }
-        
-        public static OperatingSystem OSVersion { get; }
 
-        private void edit()
-        {
-            about.Text= OSVersion.ToString();
-    }
     }
 }

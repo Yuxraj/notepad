@@ -17,6 +17,7 @@
         <CommandBinding Command="ApplicationCommands.Open"
                                     Executed="OpenCommand_Executed"
                                     CanExecute="OpenCommand_CanExecute"/>
+        
     </Window.CommandBindings>
     <Grid>
         <DockPanel>
@@ -37,11 +38,10 @@
                     <MenuItem Header="Cut"></MenuItem>
                     <MenuItem Header="Copy"></MenuItem>
                     <MenuItem Header="Paste"></MenuItem>
-                    <MenuItem Header="Delete"></MenuItem>
                 </MenuItem>
 
                 <MenuItem Header="Help">
-                    <MenuItem Header="About"></MenuItem>
+                    <MenuItem Header="About" Click="aboutClick"></MenuItem>
                 </MenuItem>
             </Menu>
             <StatusBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch">
