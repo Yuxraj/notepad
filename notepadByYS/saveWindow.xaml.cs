@@ -52,7 +52,8 @@ namespace notepadByYS
         {
             SaveFileDialog saveFileDialogF = new SaveFileDialog()
             {
-                FileName = "test.txt"
+                FileName = "test.txt",
+                Filter = " *.txt | *.*"
             };
 
             bool? result = saveFileDialogF.ShowDialog();

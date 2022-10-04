@@ -17,7 +17,16 @@
         <CommandBinding Command="ApplicationCommands.Open"
                                     Executed="OpenCommand_Executed"
                                     CanExecute="OpenCommand_CanExecute"/>
-        
+        <CommandBinding Command="ApplicationCommands.Cut"
+                                    Executed="CutCommand_executed"
+                                    CanExecute="CutCommand_CanExecute"/>
+        <CommandBinding Command="ApplicationCommands.Copy"
+                                    Executed="CopyCommand_executed"
+                                    CanExecute="CopyCommand_CanExecute"/>
+        <CommandBinding Command="ApplicationCommands.Paste"
+                                    Executed="PasteCommand_executed"
+                                    CanExecute="PasteCommand_CanExecute"/>
+
     </Window.CommandBindings>
     <Grid>
         <DockPanel>
@@ -35,9 +44,15 @@
                 </MenuItem>
 
                 <MenuItem Header="Edit">
-                    <MenuItem Header="Cut"></MenuItem>
-                    <MenuItem Header="Copy"></MenuItem>
-                    <MenuItem Header="Paste"></MenuItem>
+                    <MenuItem Header="Cut"
+                              Command="ApplicationCommands.Cut"
+                              CommandTarget="{Binding ElementName=tBox}"></MenuItem>
+                    <MenuItem Header="Copy"
+                              Command="ApplicationCommands.Copy"
+                               CommandTarget="{Binding ElementName=tBox}"></MenuItem>
+                    <MenuItem Header="Paste"
+                              Command="ApplicationCommands.Paste"
+                               CommandTarget="{Binding ElementName=tBox}"></MenuItem>
                 </MenuItem>
 
                 <MenuItem Header="Help">
@@ -53,7 +68,9 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </StatusBar.RenderTransform>
-                <Label Name="cLable" Content="Character Count : " HorizontalAlignment="Left"/>
+                <Label Name="cCount" Content="Character Count : " HorizontalAlignment="Left"/>
+                <Label Name="cLable" Content="" HorizontalAlignment="Left"/>
+                
             </StatusBar>
             <TextBox Name="tBox" TextWrapping="Wrap" Text="" TextChanged="tBox_TextChanged" AcceptsReturn="True" AcceptsTab="True"/>
         </DockPanel>

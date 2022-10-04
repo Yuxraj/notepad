@@ -5,22 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:notepadByYS"
         mc:Ignorable="d"
-        Title="aboutWindow" Height="450" Width="800">
-    <Grid>
-        <TextBlock Name="about" TextWrapping="Wrap" Text="TextBlock"/>
-        <DockPanel Margin="0,392,0,0">
-            <StatusBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch">
-                <StatusBar.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="0.114"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </StatusBar.RenderTransform>
-                <Button Content="Button"/>
+        Title="aboutWindow" Height="350" Width="700">
 
+    
+
+        <DockPanel>
+
+            <StatusBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Button Name="close" Content="Close " HorizontalAlignment="Right" Click="close_Click"/>
             </StatusBar>
-        </DockPanel>
-    </Grid>
+        <TextBlock  DockPanel.Dock="Top" Name="about" TextWrapping="Wrap" Text="TextBlock" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+    </DockPanel>
+
+
 </Window>

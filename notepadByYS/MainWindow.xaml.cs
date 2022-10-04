@@ -51,7 +51,8 @@ namespace notepadByYS
         {
             SaveFileDialog saveFileDialogF = new SaveFileDialog()
             {
-                FileName = " "
+                FileName = " ",
+                Filter=" *.txt | *.*"
             };
 
             bool? result = saveFileDialogF.ShowDialog();
@@ -137,6 +138,36 @@ namespace notepadByYS
             aw.ShowDialog();
            
             aw.Close();
+        }
+
+        private void CutCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void CutCommand_executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            
+        }
+
+        private void CopyCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void CopyCommand_executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
+
+        private void PasteCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void PasteCommand_executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            
         }
     }
 }
