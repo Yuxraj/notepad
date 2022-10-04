@@ -18,15 +18,7 @@
         <CommandBinding Command="ApplicationCommands.Open"
                                     Executed="OpenCommand_Executed"
                                     CanExecute="OpenCommand_CanExecute"/>
-        <CommandBinding Command="ApplicationCommands.Cut"
-                                    Executed="CutCommand_executed"
-                                    CanExecute="CutCommand_CanExecute"/>
-        <CommandBinding Command="ApplicationCommands.Copy"
-                                    Executed="CopyCommand_executed"
-                                    CanExecute="CopyCommand_CanExecute"/>
-        <CommandBinding Command="ApplicationCommands.Paste"
-                                    Executed="PasteCommand_executed"
-                                    CanExecute="PasteCommand_CanExecute"/>
+
 
     </Window.CommandBindings>
     <Grid>

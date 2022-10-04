@@ -1,4 +1,13 @@
-﻿using Microsoft.Win32;
+﻿/*
+* PROJECT : PROG2121 - A02-WPF
+* PROGRAMMER : Yuvraj Singh
+* FIRST VERSION : 2022-09-27
+* DESCRIPTION : Create a Notepad using WPF: this is the MainWindow class, 
+* This is the main window that replicates a notepad, it has textbox where the user can write 
+* and some menu from which the user can do some quick actions.
+*/
+
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,9 +33,6 @@ namespace notepadByYS
     public partial class MainWindow : Window
     {
         bool textChanged = false;
-
-       
-
         public MainWindow()
         {
             InitializeComponent();
@@ -60,7 +66,6 @@ namespace notepadByYS
             StreamWriter createFile = new StreamWriter(File.Create(saveFileDialogF.FileName));
             createFile.Write(tBox.Text);
             createFile.Close();
-
         }
         private void SaveAsCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
@@ -78,15 +83,11 @@ namespace notepadByYS
             sw.ShowDialog();
             tBox.Text = sw.TBoxContent;
             sw.Close();
-
-
             
         }
         private void NewCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-
             e.CanExecute = true;
-
         }
 
         /// <summary>
@@ -102,8 +103,7 @@ namespace notepadByYS
                 saveWindow sw = new saveWindow(tBox.Text);
                 sw.ShowDialog();
                 tBox.Text = sw.TBoxContent;
-                sw.Close();
-                
+                sw.Close(); 
             }
             else
             {
@@ -116,21 +116,22 @@ namespace notepadByYS
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OpenCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-
-        }
-
         private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             bool? result = ofd.ShowDialog();
             tBox.Text = File.ReadAllText(ofd.FileName);
-
-
+        }
+        private void OpenCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
         }
 
+        /// <summary>
+        /// Function used to display information about the application when the About menu is selected.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutClick(object sender, RoutedEventArgs e)
         {
             aboutWindow aw = new aboutWindow();
@@ -140,37 +141,12 @@ namespace notepadByYS
            
             aw.Close();
         }
-
-        private void CutCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
-
-        private void CutCommand_executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            
-        }
-
-        private void CopyCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
-
-        private void CopyCommand_executed(object sender, ExecutedRoutedEventArgs e)
-        {
-
-        }
-
-        private void PasteCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
-
-        private void PasteCommand_executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            
-        }
-
+       
+        /// <summary>
+        /// closing function used to prevent the user from closing the main window and losing the work, so the save window gets called.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="cancelEventArgs"></param>
         private void closing(object sender, CancelEventArgs cancelEventArgs)
         {
             if (textChanged)
