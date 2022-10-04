@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:notepadByYS"
         mc:Ignorable="d"
-        Title="saveWindow" Height="450" Width="800">
+        Title="saveWindow" Height="250" Width="400">
     <Grid>
         <DockPanel>
             <StatusBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch">

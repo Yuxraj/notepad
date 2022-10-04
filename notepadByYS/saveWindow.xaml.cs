@@ -1,4 +1,13 @@
-﻿using Microsoft.Win32;
+﻿/*
+* PROJECT : PROG2121 - A02-WPF
+* PROGRAMMER : Yuvraj Singh
+* FIRST VERSION : 2022-09-27
+* DESCRIPTION : Create a Notepad using WPF: this is the saveWindow class, 
+* it is used to ask the user if he wants to save the text before opening a new one and prevent to lose the file buy closing it.
+*/
+
+
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;

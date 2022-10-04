@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+* PROJECT : PROG2121 - A02-WPF
+* PROGRAMMER : Yuvraj Singh
+* FIRST VERSION : 2022-09-27
+* DESCRIPTION : Create a Notepad using WPF: this is the aboutWindow class, 
+* it is used to display info about the Application and the OS (a pre-written text).
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
